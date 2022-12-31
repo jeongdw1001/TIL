@@ -1,12 +1,16 @@
 ### 1 . 클래스선언 -> 객체 생성  -> 멤버호출 
 
-#[Step 01:  클래스 선언 ]
-class Test: # object의  후손 클래스가 되어 선조의 메소드들을 참조하고 있다.    object <- Test
+---
+
+1. [Step 01:  클래스 선언 ]
+class Test: # object의  후손 클래스가 되어 선조의 메소드들을 참조하고 있다. 
+object <- Test
     def empty(self):
        self.data = []  #리스트 객체를 초기화 
-
     def add(self, x):
-       self.data.append(x)  # x를 리스트 객체에 추가 
+       self.data.append(x)  # x를 리스트 객체에 추가
+
+      
 
 if __name__ == '__main__':
 #[Step 02:  클래스 객체 생성  ]
@@ -110,8 +114,8 @@ if __name__ == '__main__':
 
 ### 5. 클래스 캡슐화 확인
 
-# 정수형 변수 a,b 를 관리하는 클래스를 만들어 보자. 단 캡슐화로 구현 해보자.
-# 은닉된 멤버 변수에게  setxx으로 값 전달 및 변경하고   getxx return 메소드로 리턴하는 구조  4:00시
+### 정수형 변수 a,b 를 관리하는 클래스를 만들어 보자. 단 캡슐화로 구현 해보자.
+### 은닉된 멤버 변수에게  setxx으로 값 전달 및 변경하고   getxx return 메소드로 리턴하는 구조 
 class Test:
     __a=0  #주소 히든 private 초기값은 생성자에서 대입
     __b=0
@@ -137,8 +141,8 @@ if __name__ == '__main__':
 
 #생성자와 소멸자를 살펴보자.
 
-# 생성자를 명시하지 않으면 자동으로 내부호출되어 생성되고 (선조인 object클래스의 __init__가 호출 )
-#  명시하게 되면 명시된 생성자가 호출된다.
+- 생성자를 명시하지 않으면 자동으로 내부호출되어 생성되고 (선조인 object클래스의 __init__가 호출 )
+- 명시하게 되면 명시된 생성자가 호출된다.
 
 # 생성자는 단 한번 객체를 생성할 때 자동 호출되며 해당클래스의 모든 멤버를 동적 할당 메모리로 로드하게 된다.
 # 생성자의 목적은 멤버변수 초기화에 있다.
@@ -192,3 +196,23 @@ if __name__ == '__main__':
     print(x.GetStudent())
     print(x.personInfo())
 
+    a1 = LTab("LTab", 500, "AP-01")
+    a2 = OTab("OTab", 1000, "AND-20")
+    print("Mobile", "\t\t", "Battery", "\t\t", "osType", "\n", "-"*30)
+    print(a1.getMobileName()+ "\t\t" + str(a1.getBatterySize()) + "\t\t\t" + a1.getOsType())
+    print(a2.getMobileName()+ "\t\t" + str(a2.getBatterySize()) + "\t\t" + a2.getOsType())
+    print("-" * 30)
+    print("10분 충전")
+    print("Mobile", "\t\t", "Battery", "\t\t", "osType", "\n", "-" * 30)
+    a1.charge(10)
+    a2.charge(10)
+    print(a1.getMobileName() + "\t\t" + str(a1.getBatterySize()) + "\t\t\t" + a1.getOsType())
+    print(a2.getMobileName() + "\t\t" + str(a2.getBatterySize()) + "\t\t" + a2.getOsType())
+    print("-" * 30)
+    print("5분 통화")
+    print("Mobile", "\t\t", "Battery", "\t\t", "osType", "\n", "-" * 30)
+    a1.operate(5)
+    a2.operate(5)
+    print(a1.getMobileName() + "\t\t" + str(a1.getBatterySize()) + "\t\t\t" + a1.getOsType())
+    print(a2.getMobileName() + "\t\t" + str(a2.getBatterySize()) + "\t\t" + a2.getOsType())
+    print("-" * 30)
