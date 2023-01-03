@@ -120,7 +120,8 @@ WHERE ENAME LIKE 'A%N';
 SELECT ENAME
 FROM EMP
 WHERE ENAME LIKE '_M%';
-
+```
+```sql
 /*
 	SELECT  칼럼1, 칼럼2, 칼럼3
     FROM 테이블
@@ -154,7 +155,8 @@ WHERE ENAME LIKE '_M%';
     SELECT  ENAME, SAL
     FROM EMP
     ORDER BY ENAME, 2 DESC;
-    
+```
+```sql    
 /*
 	집계함수(칼럼명) : null 처리 안됨
     sum, avg, var, mean, count ...
@@ -198,7 +200,8 @@ where deptno=10 or deptno=20;
 select avg(sal) 
 from emp
 where job = 'SALESMAN';  # -> 데이터가 대문자로 이루어져있으므로 대문자로 적어야함.
-
+```
+```sql  
 /*
 group by
 1. group by문 다음에는 데이터를 구분 짓기 위한 표현식으로  ************************완전중요*************************
@@ -263,7 +266,8 @@ FROM EMP;
 SELECT DEPTNO, MAX(SAL)
 FROM EMP
 GROUP BY DEPTNO;
-
+```
+```sql  
 /* 
 	IS [NOT] NULL
     
@@ -278,7 +282,8 @@ WHERE COMM IS NOT NULL;
 SELECT ENAME, COMM
 FROM EMP
 WHERE COMM IS NULL;
-
+```
+````sql  
 /*HAVING 사용하기(많으면 3문제 출제)
 - GROUP함수로 집계된 데이터에 조건을 줄 때 사용
 - 연산자는 GROUP BY 연산에 의해서 나누어진 데이터들을 다시 걸러주기 위해서 사용한다.
@@ -314,8 +319,7 @@ SELECT DEPTNO, SUM(SAL)
 FROM EMP
 GROUP BY DEPTNO
 HAVING SUM(SAL) >= 10000;
-
-
+ 
 /*
 WITH ROLLUP = 그룹총합, 부분소계 : ROLLUP 연산자는 GROUP BY문과 함께 사용되며
 GROUP BY문에서 명시한 컬럼 순서대로 추가적인 요약정보를 단계적으로 만들어준다.
@@ -335,7 +339,7 @@ SELECT JOB, ENAME, SUM(SAL)
 FROM EMP
 GROUP BY JOB, ENAME WITH ROLLUP
 ORDER BY 1;
-
+ 
 /*
 CUBE = 소계, 총계 : GROUP BY 문과 함께 사용되며 GROUP BY 문에서 명시한
 전체 컬럼에 대하여 추가적인 요약 정보를 단계적으로 만들어준다.
