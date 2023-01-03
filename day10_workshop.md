@@ -58,3 +58,4 @@ select ename
 from emp
 where ENAME LIKE 'A%';
 ```
+ㅇ
