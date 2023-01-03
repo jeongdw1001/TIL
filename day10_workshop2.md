@@ -47,3 +47,19 @@
 -- 13 사원테이블에서 입사년도와 일만 출력하자. 
 ```
 
+---
+
+
+> 함수참고
+1. 맨 첫 글자만 대문자로 변경해주는 INITCAP 함수 (ORACLE)
+-ORACLE에서만 built-in된 함수, MYSQL에서는 지원하지 않음.
+
+2. CONCAT() : 문자열 이어주는 함수
+   
+3. SUBSTRING(문자열, n) : n번째 자리부터 문자열을 뽑아주는 함수
+
+```SQL
+ select CONCAT(upper(left(ename, 1)) , LOWER(SUBSTRING(ename,2))) AS 사원이름
+ from emp;
+```
+
