@@ -1,3 +1,4 @@
+
 1) 시리즈 및 데이터 프레임
 
 2) 시리즈 ( Series) 만들기
@@ -20,11 +21,12 @@
 
 *도움말 링크 : https://pandas.pydata.org/
 
-
+```python
 import pandas as pd
 import numpy as np
-
-2) 시리즈 ( Series) 만들기
+```
+```python
+# 2) 시리즈 ( Series) 만들기
 
 s1 = pd.Series([0,1,2])
 print(s1)
@@ -40,16 +42,17 @@ s4 = pd.Series({'e':'1','b':'2','d':'3'})  #key : value
 print(s4, end='\n')
 # dtype : object --> 연산이 불가능(=분석이 불가능)
 print(s4.info())  #시리즈 정보를 확인
-
+```
+```python
 print(dir(s4))
 
 print(help(s4))
 # Series(pandas.core.base.IndexOpsMixin, pandas.core.generic.NDFrame)
  |  Series(data=None, index=None, dtype: 'Dtype | None' = None, name=None, copy: 'bool' = False, fastpath: 'bool' = False)
  
- 
-
-3) 데이터 프레임 ( DataFrame) 만들기
+```
+```python
+# 3) 데이터 프레임 ( DataFrame) 만들기
 
 d1 = pd.DataFrame([[0,1,2],
                   [3,4,5],
@@ -61,7 +64,8 @@ d1 = pd.DataFrame([[0,1,2],
 
 print(d1,end='\n\n')
 d1.info()
-
+```
+```python
 d2 = pd.DataFrame(np.random.rand(12).reshape(4,3),
                   columns = ['c1','c2','c3'])
 print(d2, end='\n\n')
@@ -72,29 +76,34 @@ d3 = pd.DataFrame({'Initial':['B','F','W'],
                  )
 print(d3, end='\n\n')
 #d1.info()
-
+```
+```python
 # 독립변수 X1~Xn (features)
 #종속변수 y (class labels) =정답 라벨
 
 #iris.csv 설치된 경로 
 #C:\Anaconda3\pkgs\scikit-learn-1.0.2-py39hf11a4ad_1\Lib\site-packages\sklearn\datasets\data
-
+```
+```python
 #!pip install scikit-learn
 from sklearn.datasets import load_iris
 data = load_iris()
 type(data)
 print(data) #2차원 [가 2개
 
-
+```
+```python
 #4) csv 파일에서 데이터 프레임 만들기
 iris_d = pd.read_csv('..\data\iris.csv')
 iris_d
 iris_d.info()
-
+```
+```python
 #RangeIndex :150 entries, 0 to 149
 print(iris_d.index)
 print(len(iris_d))
-
+```
+```python
 import sklearn
 
 from sklearn.datasets import load_iris
@@ -103,8 +112,9 @@ data = load_iris()
 print(data)
 #type(data) # bunch = dict타입의 대용량 형식
 
-
-4) CSV 파일에서 데이터 프레임 만들기
+```
+```python
+# 4) CSV 파일에서 데이터 프레임 만들기
 
 iris_d =pd.read_csv('../data/iris.csv')
 iris_d
@@ -117,8 +127,9 @@ iris_d.tail(10)
 #RangeIndex :150 entries, 0 to 149
 print(iris_d.index)
 print(len)
-
-5) 데이터 참조 및 데이터 조건 검색, 단일 컬럼 추출, 다중 컬럼 추출, 인덱싱, 슬라이싱 = iloc[], loc[정수, 컬럼명]
+```
+```python
+# 5) 데이터 참조 및 데이터 조건 검색, 단일 컬럼 추출, 다중 컬럼 추출, 인덱싱, 슬라이싱 = iloc[], loc[정수, 컬럼명]
 
 iris_d[:5] #5행 추출
 
@@ -136,7 +147,8 @@ type(r)
 iris_d[['sepallength','sepalwidth']].head(10)
 r=iris_d[['sepallength','sepalwidth']]
 print(type(r))
-
+```
+```python
 iris_d.iloc[1]
 
 iris_d
@@ -154,15 +166,19 @@ iris_d.loc[2, 'sepalwidth']
 
 iris_d.loc[1:5, ['sepalwidth','petallength']]
 
+```
+```python
 #sepallength  sepalwidth  petallength  petalwidth  class
 
-6) 데이터 조건 검색 : and, or -> not, &, |, ~를 사용한다.
+# 6) 데이터 조건 검색 : and, or -> not, &, |, ~를 사용한다.
 
 #sepallength 7.0보다 크고 sepalwidth 3.0작은 데이터를 추출해보자.
 iris_d[(iris_d['sepallength'] > 7.0) & (iris_d['sepalwidth'] < 3.0)]
-
+```
+```python
 6-1)열 추가 및 삭제, 행 추가 및 삭제 -> 시계열 계산
-
+```
+```python
 7) 데이터 정렬, 통계량
 
 iris_d['mycolumn'] = np.random.rand(len(iris_d.index))
@@ -170,7 +186,8 @@ iris_d.head()
 
 #del iris_d['mycolumn']
 iris_d.head()
-
+```
+```python
 # 데이터 프레임에 컬럼을 추가해서 다시 리턴하는 메소드 assign(컬럼명 = 값)
 # drop()을 이용하면 원하는 컬럼을 삭제할 수 있다.
 
@@ -197,33 +214,40 @@ m_iris
 m_iris[-2:]
 
 m_iris.tail()
-
+```
+```python
 7) 데이터 정렬,  통계량
 sort_index() : 데이터 프레임의 인덱스를 기반으로 정렬
 sort_values() : 임의의 열의 값에 의한 소트
 inplace = False 소트에 의해 새로운 데이터 프레임을 작성
-
+```
+```python
 sorted_iris = iris_d.sort_values(['sepallength','sepalwidth','petallength','petalwidth'])
 sorted_iris.head(10)
 
 # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.sort_index.html
-
+```
+```python
 #True:오름차순
 sorted_iris_T = iris_d.sort_values(['sepallength','sepalwidth','petallength','petalwidth'],ascending=True)
 sorted_iris_T.head(10)  
-
+```
+```python
 #False:내림차순
 sorted_iris_F = iris_d.sort_values(['sepallength','sepalwidth','petallength','petalwidth'],ascending=False)
 sorted_iris_F.head(10) 
-
+```
+```python
 iris_d.sort_index(ascending=False)
-
+```
+```python
 iris_d.describe() #평균, 표준편차, 최대값, 최소값, 집계
 # 표준편차랑 분산
 # 표준편차 : 분산의 정도, 산포도 수치형식, 분산값에 루트를 씌운 값
 # 데이터가 평균과 얼마나 차이가 있는지 확인
 # 확률분포 -> 인구증가, 중복데이터ㅕㅓ  
-
+```
+```python
 8) 데이터 연결 : concat, 결합 : merge
 # 행과 행을 연결        
 
@@ -235,12 +259,14 @@ concat_res
 # 행과 행을 연결 
 concat_res = pd.concat([iris_d[:5],iris_d[-5:]])
 concat_res
-
+```
+```python
 9) 데이터 그룹화 _groupby()
 
 iris_d.groupby('class').head()
 
 iris_d.groupby('class')[['sepallength','sepalwidth']].mean()
-
+```
+```python
 10) 결손값, 시계열 데이터 처리
-
+```
