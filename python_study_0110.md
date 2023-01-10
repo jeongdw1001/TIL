@@ -158,12 +158,121 @@
 
 > ## 5. Python 문자열
 - 인덱싱(indexing)은 순서가 있는 데이터에서 index로 하나의 객체를 참조하는 것이며, index는 정수이며 0부터 시작한다. 
-- [ k ] 형식, k번 위치의 값 하나를 취한다.
+  - [ k ] 형식, k번 위치의 값 하나를 취한다.
 - 슬라이싱(Slicing)은 시퀀스 자료형의 일정 영역에서 새로운 객체를 반환하며, 결과의 자료형은 원래의 자료형과 같다.
-- [ 시작오프셋 : 끝오프셋 ]
-- [ s : t : p ] 형식
-- s부터 t사이 구간의 값을 p 간격으로 취한다.
+  - [ 시작오프셋 : 끝오프셋 ]
+  - [ s : t : p ] 형식
+  - s부터 t사이 구간의 값을 p 간격으로 취한다.
 - 오프셋은 생략할 수 있으며, 시작 오프셋을 생략하면 0, 끝 오프셋을 생략하면 마지막 값으로 처리한다.
+
+### 1) 문자열 연산
+- 문자열은 그 자체 값을 변경할 수 없는 변경 불가능 자료형이다.
+```python
+# format()를 사용한 서식 지정_하나씩 지정하는것 권장
+>>> int_val = 23; float_val = 2.34567
+>>> print( format( int_val, '3d' ), 'any value', format( float_val, '.2f' ) )
+
+23 any value 2.35
+```
+
+```python
+>>> s = 'i like programming. i like swimming'
+
+>>> s.upper()   # 대문자로 변환
+'I LIKE PROGRAMMING. I LIKE SWIMMING'
+
+>>> s.lower()   # 소문자로 변환
+'i like programming. i like swimming'
+
+>>> 'i like programming.'.swapcase()
+'I LIKE PROGRAMMING.'
+
+>>> s.capitalize()  # 첫 문자를 대문자로 변환
+'I like programming. i like swimming'
+
+>>> s.title()
+'I Like Programming. I Like Swimming'
+
+>>> s.count('like') # 부분 문자 발생 횟수
+2
+
+>>> s.find('like')  # 검색
+2
+
+>>> s.find('like',3)
+22
+
+>>> s.find('my')
+-1
+
+>>> s.rfind('like') # 역순 검색
+22
+
+>>> s.index('like')
+2
+
+>>> s.index('my')   # find()와 동일, 없을 경우 예외 발생
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: substring not found
+
+>>> s.rindex('like')
+22
+
+>>> s.startswith('i like')  # ‘i like’로 시작하는 문자열인가?
+True
+
+>>> s.split() # 공백으로 분리
+['i', 'like', 'programming.', 'i', 'like', 'swimming']
+```
+### 2) Python 리스트
+```python
+# 리스트의 일부 값 변경
+>>> a = [ 'spam', 'eggs', 100, 1234 ]
+>>> a[2] = a[2] + 23;
+>>> a
+['spam', 'eggs', 123, 1234]
+
+# 리스트의 일부 값 치환
+>>> a[ 0:2 ] = [ 1, 12 ];
+>>> a
+[1, 12, 123, 1234]
+```
+
+
+- 리스트 메서드
+  
+|메서드|설명|
+|---|---|
+|append|데이터를 리스트 끝에 추가(스택의 push) 한다.|
+|insert|데이터를 지정한 위치에 삽입한다.|
+|index|요소를 검색한다.
+|count|요소의 개수를 알아낸다.
+|sort|리스트를 정렬한다.
+|reverse|리스트의 순서를 바꾼다.
+|remove|리스트의 지정한 값 하나를 삭제한다.
+|pop|리스트의 지정한 값 하나를 읽어 내고 삭제(스택의 Pop) 한다.
+|extend|리스트를 추가한다.
+
+
+- 순차적인 정수 리스트를 만들 때 range() 함수 사용
+
+```python
+# 리스트 내장 형식
+[ <식> for <타깃1> in <객체1>
+       …
+       for <타깃n> in <객체n> 
+       ( if <조건식> ) ]
+```
+### 3) Python 튜플
+- 튜플(tuple)은 임의의 객체들이 순서를 가지는 모음으로 리스트와 유사한 면이 많다. 
+- 차이점은 변경 불가능한 자료형이라는 것이다.
+- 튜플은 시퀀스 자료형이므로 시퀀스 자료형의 특성을 모두 가진다.
+
+
+
+
+
 
 
 
