@@ -25,9 +25,27 @@
    - Cpython, Jython, IronPython, pypy 등
   
 
-  >## 2) 파이썬 패키지
+  >## 2. 파이썬 패키지
   - 모듈, 패키지, 프로젝트의 관계 
     - 파이썬은 디렉토리에 __init__.py 파일이 존재하면 이를 패키지라 여긴다.
     - 패키지로부터 모듈을 사용하기 위한 파이썬 키워드 from / import
-    - from [package name] import [module name]
+    -> from [package name] import [module name]
+    - 외부에서 패키지를 참조하는 시점에 해당 패키지의 __init__.py 파일이 실행된다
 
+>## 3. Python 프로그램 구조
+### 1) 변수
+- 유니 코드 문자나 밑줄로 시작해야 한다.
+- 이름에 공백 불가
+- 아스키 코드의 특수 문자는 사용 불가
+- 예약어 불가
+- 파이썬 전체 예약어 알아내기 코드
+  ```python
+  import keyword
+  keyword.kwlist  
+  len(keyword.kwlist)  #35개
+  ```
+  ```python
+  # 파이썬 전체 예약어
+  ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+  ```
+  
