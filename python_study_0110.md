@@ -48,4 +48,57 @@
   # 파이썬 전체 예약어
   ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
   ```
-  
+  ### 2) 포맷팅
+  | type   | 설명   |  
+  | ------ | ------ | 
+  | %s     | 문자열 |
+  | %c     | 문자 1개 | 
+  | %d     | 정수 | 
+  | %f     | 부동 소수 | 
+
+```python
+>>> import pprint
+>>> numbers = [[1,2,3],[4,5],[6,7,8,9]]
+>>> print(numbers)
+[[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+
+>>> print(*numbers)
+[1, 2, 3] [4, 5] [6, 7, 8, 9]
+
+>>> print(*numbers, sep = '\n')
+[1, 2, 3]
+[4, 5]
+[6, 7, 8, 9]
+
+>>> pprint.pprint(numbers)
+[[1, 2, 3], [4, 5], [6, 7, 8, 9]]
+
+>>> pprint.pprint(numbers, width = 20)
+[[1, 2, 3],
+ [4, 5],
+ [6, 7, 8, 9]]
+
+>>> pprint.pprint(numbers, width = 20, indent = 4)
+[   [1, 2, 3],
+    [4, 5],
+    [6, 7, 8, 9]]
+```
+
+
+### 3) 데이터 저장 방법에 따른 자료형 분류
+| 자료형   | 설명   |  예시   |
+| ---   | ---   |  ---   |
+| direct 형   | 직접 데이터를 표현하는 자료형, 숫자형이 속함   |  int, float, complex   |
+| sequence 형 | 다른 데이터를 포함하는 자료형, 순서가 있는 집합 자료형   |  list, str, tuple, bytes, range   |
+| mapping 형   | 다른 데이터를 포함하는 자료형   |  dict   |
+| set 형   | 순서가 없고, 중복된 항복도 없다.   |  set   |
+
+
+### 4) 변경 가능성에 따른 자료형 분류
+| 자료형 | 설명   |  예시   |
+| ---   | ---   |  ---   |
+| 변경 가능형(Mutable)  | 데이터의 값을 변경할 수 있다.   |  list, dict, set, array   |
+| 변경 불가능형(Immutable) | 데이터의 값을 변경할 수 없다.   |  int, str, float, complex, tuple   |
+
+
+
