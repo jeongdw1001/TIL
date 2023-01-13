@@ -1,8 +1,21 @@
-- 웹크롤링 배우기
+  <<웹크롤링 배우기>>
 - network란 무엇인가?(면접질문)
   - 소리만 들을 수 있는 공간에서 공을 주고받기(던지겠다는 신호를 주고 받)
-  - 규약(protocol)들의 집합
+  - 정해진 규약(protocol)들의 집합
     - HTTP-request(HTML-response)
     - FTP
     - http -> 실제 도메인 주소 입력 시 https(security)
 - request 요청하고 웹서버 홈페이지가 response 응답해서 필요한 데이터 추출(스크래핑)해서 파일 시스템에 저장
+
+## 웹크롤링
+1) 대상 사이트 분석 (HTML, CSS-디자인, Javascript-기능)
+2) ex) HTTP request (URL, query = 파이썬)
+3) HTTP response -> HTML이 받음
+4) HTML에 들어있는 내가 필요한 데이터를 추출(찾아내기)
+5) 추출 데이터 저장 (DB/Filesystem)
+
+--> 이후 웹 페이지 기본 구조와 작성 방법.pdf 참고
+
+(*) 메서드 : 클래스 안에 들어있는 함수
+
+<script> : javascript 추가
