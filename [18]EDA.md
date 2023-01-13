@@ -254,5 +254,9 @@ titanic['embarked'].fillna(et_idxmax, inplace=True)
 ```
 ```python
 titanic.isnull().sum()
+<<<<<<< HEAD
 ```
 
+=======
+```
+>>>>>>> c71c4abcbd0cc0800e4e04d52414fb6644a93bf8

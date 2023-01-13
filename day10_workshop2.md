@@ -56,9 +56,13 @@
 
 2. CONCAT() : 문자열 이어주는 함수
    
+<<<<<<< HEAD
 3. SUBSTRING
 - SUBSTRING(문자열, 시작지점) : n번째 자리부터 문자열을 뽑아주는 함수
 - SUBSTRING(문자열, 시작지점, 길이) : n번째 자리부터 길이만큼 문자열을 뽑아주는 함수
+=======
+3. SUBSTRING(문자열, n) : n번째 자리부터 문자열을 뽑아주는 함수
+>>>>>>> c71c4abcbd0cc0800e4e04d52414fb6644a93bf8
 
 ```SQL
  select CONCAT(upper(left(ename, 1)) , LOWER(SUBSTRING(ename,2))) AS 사원이름
