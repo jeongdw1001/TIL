@@ -1,0 +1,8 @@
+- 웹크롤링 배우기
+- network란 무엇인가?(면접질문)
+  - 소리만 들을 수 있는 공간에서 공을 주고받기(던지겠다는 신호를 주고 받)
+  - 규약(protocol)들의 집합
+    - HTTP-request(HTML-response)
+    - FTP
+    - http -> 실제 도메인 주소 입력 시 https(security)
+- request 요청하고 웹서버 홈페이지가 response 응답해서 필요한 데이터 추출(스크래핑)해서 파일 시스템에 저장
