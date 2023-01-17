@@ -75,7 +75,6 @@
 </body>
 </html>
 ```
-
 ## - 아이디 선택자
 ```html
 <!DOCTYPE html>
@@ -122,7 +121,49 @@
 </html>
 ```
 
+## - 클래스 선택자
+- 클래스 선택자를 여러 개 사용하기
+```html
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+	.item { color: red; }
+	.header { background-color: blue; }
+    </style>
+</head>
+<body>
+	<h1 class="item header">동해물과 백두산이</h1>
+</body>
+</html>
+```
 
+## - 후손 선택자
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Selector Basic</title>
+    <style>
+        #header h1  { color: red; }
+        #section h1 { color: orange; }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1 class="title">Lorem ipsum</h1>
+        <div id="nav">
+            <h1>Navigation</h1>
+        </div>
+    </div>
+    <div id="section">
+        <h1 class="title">Lorem ipsum</h1>
+        <p>Lorem ipsum dolor sit amet, </p>
+    </div>
+</body>
+</html>
+```
 
 
 
