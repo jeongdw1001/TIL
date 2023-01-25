@@ -102,6 +102,9 @@ INSERT INTO buytbl VALUES(NULL, 'BBK', '운동화', NULL   , 30,   2);
 SELECT * FROM usertbl;
 SELECT * FROM buytbl;
 ```
+
+## - usertbl
+
 userID|name|birthYear|addr|mobile1|mobile2|height|mDate
 |---|---|---|---|---|---|---|---|
 BBK	|바비킴	|1973	|서울	|010	|0000000	|176	|2013-05-05
@@ -115,4 +118,22 @@ LSG	|이승기	|1987	|서울	|011	|1111111	|182	|2008-08-08
 SSK	|성시경	|1979	|서울	|null	|null	|186	|2013-12-12
 YJS	|윤종신	|1969	|경남	|	null|	null|170	|2005-05-05
 							
-	
+## - buytbl
+num|userID|prodName|groupName|price|amount
+|---|---|---|---|---|---|
+1	|KBS|	운동화	|null	|30	|2
+2	|KBS|	노트북	|전자	|1000|	1
+3	|JYP|	모니터	|전자	|200|	1
+4	|BBK|	모니터	|전자	|200|	5
+5	|KBS|	청바지	|의류	|50	|3
+6	|BBK|	메모리	|전자	|80	|10
+7	|SSK|	책	|서적	|15|	5
+8	|EJW|	책	|서적	|15	|2
+9	|EJW|	청바지	|의류	|50	|1
+10	|BBK|	운동화	|null	|30|	2
+11	|EJW|	책	|서적|	15|	1
+12	|BBK|	운동화|	null|	30|	2
+
+
+
+
