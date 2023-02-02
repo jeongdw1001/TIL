@@ -32,3 +32,27 @@
 
 - 소스 변경사항 자동 반영
 	- *.py 파일의 변경 여부를 감시하고 있다가 변경이 되면 실행 파일에 변경 내역을 바로 반영
+
+
+
+
+# 장고에서의 애플리케이션 개발 방식
+## MVT 코딩 순서
+
+- 프로젝트 뼈대 만들기 : 프로젝트 및 앱 개발에 필요한 디렉토리와 파일 생성
+- 모델 코딩하기 : 테이블 관련 사항을 개발 (models.py, admin.py)
+- URLconf 코딩하기 : URL 및 뷰 매핑 관계를 정의 (urls.py)
+- 템플릿 코딩하기 : 화면 UI 개발 (templates / 디렉토리 하위의 *.html 파일들)
+- 뷰 코딩하기 : 애플리케이션 로직 개발 (views.py 파일)
+
+
+
+## 프로젝트 뼈대 만들기 순서 명령
+
+- django-admin startproject 프로젝트명 // 프로젝트를 생성함
+- python manage.py startapp 애플리케이션 이름// 애플리케이션을 생성
+- notepad settings.py //설정 파일을 확인 및 수정
+- python manage.py migrate // 데이터베이스에 기본 테이블을 생성
+- python manage.py runserver // 현재까지 작업을 개발용 웹 서버로 확인
+
+
